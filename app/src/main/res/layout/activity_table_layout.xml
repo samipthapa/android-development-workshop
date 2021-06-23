@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TableLayout"
+    android:background="#00ffff"
+    android:paddingTop="200dp">
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_marginVertical="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Code"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:layout_column="1"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Title"
+            android:layout_marginLeft="40dp"
+            android:textSize="15sp"
+            android:layout_column="2"
+            android:textStyle="bold"
+            android:textColor="@color/black"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CSC206"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:layout_column="1"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data Structure and Algorithm"
+            android:textSize="15sp"
+            android:layout_marginLeft="40dp"
+            android:layout_column="2"
+            android:textColor="@color/black"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CSC207"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:layout_column="1"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Numerical Method"
+            android:textSize="15sp"
+            android:layout_marginLeft="40dp"
+            android:layout_column="2"
+            android:textColor="@color/black"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CSC208"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:layout_column="1"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Computer Architecture"
+            android:textSize="15sp"
+            android:layout_marginLeft="40dp"
+            android:layout_column="2"
+            android:textColor="@color/black"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="CSC209"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:layout_column="1"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Computer Graphics"
+            android:textSize="15sp"
+            android:layout_marginLeft="40dp"
+            android:layout_column="2"
+            android:textColor="@color/black"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STA210"
+            android:textSize="15sp"
+            android:layout_marginLeft="10dp"
+            android:layout_column="1"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Statistics II"
+            android:textSize="15sp"
+            android:layout_marginLeft="40dp"
+            android:layout_column="2"
+            android:textColor="@color/black"/>
+    </TableRow>
+
+</TableLayout>
