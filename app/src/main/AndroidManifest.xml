@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstApplication">
-        <activity android:name=".RelativeLayout"></activity>
+        <activity android:name=".TableLayout"></activity>
+        <activity android:name=".FrameLayout" />
+        <activity android:name=".RelativeLayout" />
         <activity android:name=".LinearLayout">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
