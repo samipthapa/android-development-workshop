@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
     private Button relativeLayout;
     private Button frameLayout;
     private Button tableLayout;
+    private Button listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         relativeLayout = findViewById(R.id.relativeLayoutButton);
         frameLayout = findViewById(R.id.frameLayoutButton);
         tableLayout = findViewById(R.id.tableLayoutButton);
+        listView = findViewById(R.id.listViewButton);
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +57,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent tableIntent = new Intent(MainActivity.this, TableLayout.class);
                 startActivity(tableIntent);
+            }
+        });
+
+        listView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent listIntent = new Intent(MainActivity.this, ListView1.class);
+                startActivity(listIntent);
             }
         });
     }

@@ -68,4 +68,14 @@
         app:layout_constraintTop_toTopOf="@id/relativeLayoutButton"
         app:layout_constraintRight_toRightOf="@id/relativeLayoutButton"/>
 
+    <Button
+        android:id="@+id/listViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/list_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/tableLayoutButton"
+        app:layout_constraintTop_toTopOf="@id/tableLayoutButton"
+        app:layout_constraintRight_toRightOf="@id/tableLayoutButton"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

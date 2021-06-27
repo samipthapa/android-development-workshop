@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/image"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstApplication">
-        <activity android:name=".CardViewSpinner"></activity>
+        <activity android:name=".ListView1"></activity>
+        <activity android:name=".CardViewSpinner" />
         <activity android:name=".EventHandling" />
         <activity android:name=".TableLayout" />
         <activity android:name=".FrameLayout" />
