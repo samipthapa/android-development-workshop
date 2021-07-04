@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button frameLayout;
     private Button tableLayout;
     private Button listView;
+    private Button cardView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,15 @@ public class MainActivity extends AppCompatActivity {
         frameLayout = findViewById(R.id.frameLayoutButton);
         tableLayout = findViewById(R.id.tableLayoutButton);
         listView = findViewById(R.id.listViewButton);
+        cardView = findViewById(R.id.cardViewButton);
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent cardIntent = new Intent(MainActivity.this, CardViewSpinner.class);
+                startActivity(cardIntent);
+            }
+        });
 
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override

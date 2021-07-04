@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:text="@string/linear_layout"
         app:layout_constraintBottom_toBottomOf="@id/frameLayoutButton"
+        app:layout_constraintHorizontal_bias="0.517"
         app:layout_constraintLeft_toLeftOf="@id/powerWorkshop"
         app:layout_constraintRight_toRightOf="@id/powerWorkshop"
         app:layout_constraintTop_toTopOf="@id/guideline" />
@@ -50,7 +51,6 @@
         android:id="@+id/relativeLayoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="100dp"
         android:text="@string/relative_layout"
         app:layout_constraintBottom_toBottomOf="@id/tableLayoutButton"
         app:layout_constraintLeft_toLeftOf="@id/frameLayoutButton"
@@ -61,9 +61,8 @@
         android:id="@+id/tableLayoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="100dp"
         android:text="@string/table_layout"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/listViewButton"
         app:layout_constraintLeft_toLeftOf="@id/relativeLayoutButton"
         app:layout_constraintTop_toTopOf="@id/relativeLayoutButton"
         app:layout_constraintRight_toRightOf="@id/relativeLayoutButton"/>
@@ -73,9 +72,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/list_view"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="50dp"
+        app:layout_constraintBottom_toBottomOf="@id/cardViewButton"
         app:layout_constraintLeft_toLeftOf="@id/tableLayoutButton"
         app:layout_constraintTop_toTopOf="@id/tableLayoutButton"
         app:layout_constraintRight_toRightOf="@id/tableLayoutButton"/>
+
+    <Button
+        android:id="@+id/cardViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CardView and Spinner"
+        android:layout_marginBottom="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/listViewButton"
+        app:layout_constraintTop_toTopOf="@id/listViewButton"
+        app:layout_constraintRight_toRightOf="@id/listViewButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
