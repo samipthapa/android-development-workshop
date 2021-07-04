@@ -6,6 +6,10 @@
     <string name="relative_layout">Relative Layout</string>
     <string name="table_layout">Table Layout</string>
     <string name="list_view">List View</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="contact_email">Contact Email</string>
+    <string name="recycler_view">Recycler View</string>
+    <string name="cardview_and_spinner">CardView and Spinner</string>
     <string-array name="names">
         <item>Aang</item>
         <item>Zuko</item>

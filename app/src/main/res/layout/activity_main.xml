@@ -72,7 +72,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/list_view"
-        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="@id/cardViewButton"
         app:layout_constraintLeft_toLeftOf="@id/tableLayoutButton"
         app:layout_constraintTop_toTopOf="@id/tableLayoutButton"
@@ -82,8 +81,17 @@
         android:id="@+id/cardViewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CardView and Spinner"
-        android:layout_marginBottom="60dp"
+        android:text="@string/cardview_and_spinner"
+        app:layout_constraintBottom_toBottomOf="@id/recyclerViewButton"
+        app:layout_constraintLeft_toLeftOf="@id/listViewButton"
+        app:layout_constraintTop_toTopOf="@id/listViewButton"
+        app:layout_constraintRight_toRightOf="@id/listViewButton"/>
+
+    <Button
+        android:id="@+id/recyclerViewButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/recycler_view"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="@id/listViewButton"
         app:layout_constraintTop_toTopOf="@id/listViewButton"
