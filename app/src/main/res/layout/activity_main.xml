@@ -6,87 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
+    <TextView
+        android:id="@+id/powerWorkshop"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/berkshire_swash"
+        android:text="Power Workshop 2021"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="@id/guideline"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/linearLayoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.74"
-        tools:srcCompat="@tools:sample/avatars" />
+        android:text="@string/linear_layout"
+        app:layout_constraintBottom_toBottomOf="@id/frameLayoutButton"
+        app:layout_constraintLeft_toLeftOf="@id/powerWorkshop"
+        app:layout_constraintRight_toRightOf="@id/powerWorkshop"
+        app:layout_constraintTop_toTopOf="@id/guideline" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="100dp" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="275dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="251dp"
-        android:layout_height="143dp"
-        android:text="@string/app_name"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.24000001"
-        tools:text="@tools:sample/lorem" />
+        app:layout_constraintGuide_begin="91dp" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/frameLayoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
-        app:layout_constraintBottom_toTopOf="@+id/guideline2"
-        app:layout_constraintEnd_toEndOf="@+id/textView3"
-        app:layout_constraintStart_toStartOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64" />
+        android:text="@string/frame_layout"
+        app:layout_constraintBottom_toBottomOf="@id/relativeLayoutButton"
+        app:layout_constraintLeft_toLeftOf="@id/linearLayoutButton"
+        app:layout_constraintTop_toTopOf="@id/linearLayoutButton"
+        app:layout_constraintRight_toRightOf="@id/linearLayoutButton"/>
 
-    <TextView
-        android:id="@+id/textView4"
+    <Button
+        android:id="@+id/relativeLayoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/textView3"
-        app:layout_constraintVertical_bias="0.475" />
+        android:layout_marginHorizontal="100dp"
+        android:text="@string/relative_layout"
+        app:layout_constraintBottom_toBottomOf="@id/tableLayoutButton"
+        app:layout_constraintLeft_toLeftOf="@id/frameLayoutButton"
+        app:layout_constraintTop_toTopOf="@id/frameLayoutButton"
+        app:layout_constraintRight_toRightOf="@id/frameLayoutButton"/>
 
-    <TextView
-        android:id="@+id/textView2"
+    <Button
+        android:id="@+id/tableLayoutButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:layout_marginBottom="100dp"
+        android:text="@string/table_layout"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="@+id/guideline"
-        app:layout_constraintTop_toTopOf="@+id/guideline2"
-        app:layout_constraintVertical_bias="0.19"
-        tools:text="@tools:sample/full_names" />
+        app:layout_constraintLeft_toLeftOf="@id/relativeLayoutButton"
+        app:layout_constraintTop_toTopOf="@id/relativeLayoutButton"
+        app:layout_constraintRight_toRightOf="@id/relativeLayoutButton"/>
 
-    <TextView
-        android:id="@+id/textView5"
+    <Button
+        android:id="@+id/listViewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
-        tools:layout_editor_absoluteX="121dp"
-        tools:text="@tools:sample/lorem" />
+        android:text="@string/list_view"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/tableLayoutButton"
+        app:layout_constraintTop_toTopOf="@id/tableLayoutButton"
+        app:layout_constraintRight_toRightOf="@id/tableLayoutButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

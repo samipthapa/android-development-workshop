@@ -16,22 +16,23 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Course Code"
-            android:textSize="15sp"
-            android:layout_marginLeft="10dp"
             android:layout_column="1"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:layout_marginLeft="10dp"
+            android:text="@string/course_code"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Course Title"
-            android:layout_marginLeft="40dp"
-            android:textSize="15sp"
             android:layout_column="2"
-            android:textStyle="bold"
-            android:textColor="@color/black"/>
+            android:layout_marginLeft="40dp"
+            android:fontFamily="@font/bad_script"
+            android:text="Course Title"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            android:textStyle="bold" />
     </TableRow>
 
     <TableRow
