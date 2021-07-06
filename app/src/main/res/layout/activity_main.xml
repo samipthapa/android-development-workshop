@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/berkshire_swash"
-        android:text="Power Workshop 2021"
+        android:text="@string/power_workshop_2021"
         android:textAlignment="center"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="@id/guideline"
@@ -96,5 +96,15 @@
         app:layout_constraintLeft_toLeftOf="@id/listViewButton"
         app:layout_constraintTop_toTopOf="@id/listViewButton"
         app:layout_constraintRight_toRightOf="@id/listViewButton"/>
+
+    <Button
+        android:id="@+id/navigationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Navigation/Fragments"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@id/recyclerViewButton"
+        app:layout_constraintTop_toTopOf="@id/recyclerViewButton"
+        app:layout_constraintRight_toRightOf="@id/recyclerViewButton"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
