@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     private Button frameLayout;
     private Button tableLayout;
     private Button listView;
-    private Button cardView, recyclerView;
+    private Button cardView, recyclerView, navigation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
         listView = findViewById(R.id.listViewButton);
         cardView = findViewById(R.id.cardViewButton);
         recyclerView = findViewById(R.id.recyclerViewButton);
+        navigation = findViewById(R.id.navigationButton);
+
+        navigation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, NavigationHost.class);
+                startActivity(intent);
+            }
+        });
 
         recyclerView.setOnClickListener(new View.OnClickListener() {
             @Override
