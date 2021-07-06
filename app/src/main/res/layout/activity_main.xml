@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:text="@string/linear_layout"
         app:layout_constraintBottom_toBottomOf="@id/frameLayoutButton"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.44"
         app:layout_constraintLeft_toLeftOf="@id/powerWorkshop"
         app:layout_constraintRight_toRightOf="@id/powerWorkshop"
         app:layout_constraintTop_toTopOf="@id/guideline" />
@@ -43,9 +43,10 @@
         android:layout_height="wrap_content"
         android:text="@string/frame_layout"
         app:layout_constraintBottom_toBottomOf="@id/relativeLayoutButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/linearLayoutButton"
-        app:layout_constraintTop_toTopOf="@id/linearLayoutButton"
-        app:layout_constraintRight_toRightOf="@id/linearLayoutButton"/>
+        app:layout_constraintRight_toRightOf="@id/linearLayoutButton"
+        app:layout_constraintTop_toTopOf="@id/linearLayoutButton" />
 
     <Button
         android:id="@+id/relativeLayoutButton"
@@ -53,9 +54,10 @@
         android:layout_height="wrap_content"
         android:text="@string/relative_layout"
         app:layout_constraintBottom_toBottomOf="@id/tableLayoutButton"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintLeft_toLeftOf="@id/frameLayoutButton"
-        app:layout_constraintTop_toTopOf="@id/frameLayoutButton"
-        app:layout_constraintRight_toRightOf="@id/frameLayoutButton"/>
+        app:layout_constraintRight_toRightOf="@id/frameLayoutButton"
+        app:layout_constraintTop_toTopOf="@id/frameLayoutButton" />
 
     <Button
         android:id="@+id/tableLayoutButton"
@@ -63,9 +65,10 @@
         android:layout_height="wrap_content"
         android:text="@string/table_layout"
         app:layout_constraintBottom_toBottomOf="@id/listViewButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/relativeLayoutButton"
-        app:layout_constraintTop_toTopOf="@id/relativeLayoutButton"
-        app:layout_constraintRight_toRightOf="@id/relativeLayoutButton"/>
+        app:layout_constraintRight_toRightOf="@id/relativeLayoutButton"
+        app:layout_constraintTop_toTopOf="@id/relativeLayoutButton" />
 
     <Button
         android:id="@+id/listViewButton"
@@ -73,9 +76,22 @@
         android:layout_height="wrap_content"
         android:text="@string/list_view"
         app:layout_constraintBottom_toBottomOf="@id/cardViewButton"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@id/tableLayoutButton"
-        app:layout_constraintTop_toTopOf="@id/tableLayoutButton"
-        app:layout_constraintRight_toRightOf="@id/tableLayoutButton"/>
+        app:layout_constraintRight_toRightOf="@id/tableLayoutButton"
+        app:layout_constraintTop_toTopOf="@id/tableLayoutButton" />
+
+    <Button
+        android:id="@+id/bookApplicationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book \n Application"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.813"
+        app:layout_constraintLeft_toLeftOf="@id/listViewButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.61" />
 
     <Button
         android:id="@+id/cardViewButton"
