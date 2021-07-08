@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserDetails"
+    android:padding="10dp"
+    >
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:id="@+id/back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_back"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:id="@+id/firstNameDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="First Name: "
+        android:layout_marginTop="100dp"
+        android:textSize="19sp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/lastNameDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Last Name: "
+        android:layout_below="@id/firstNameDetails"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="19sp"/>
+
+    <TextView
+        android:id="@+id/emailDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Email: "
+        android:layout_below="@id/lastNameDetails"
+        android:layout_marginTop="30dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="19sp"/>
+
+    <TextView
+        android:id="@+id/phoneDetails"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/emailDetails"
+        android:hint="Mobile Number: "
+        android:inputType="phone"
+        android:layout_marginTop="30dp"
+        android:textSize="19sp"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/genderDetails"
+        android:layout_below="@id/phoneDetails"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Gender: "
+        android:layout_marginTop="30dp"
+        android:textSize="19sp" />
+
+
+
+</RelativeLayout>

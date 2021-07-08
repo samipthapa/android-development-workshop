@@ -16,12 +16,14 @@ public class MainActivity extends AppCompatActivity {
     private Button tableLayout;
     private Button listView;
     private Button cardView, recyclerView, navigation, bookApplication;
+    private Button userDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        userDetails = findViewById(R.id.contactForm);
         linearLayout = findViewById(R.id.linearLayoutButton);
         relativeLayout = findViewById(R.id.relativeLayoutButton);
         frameLayout = findViewById(R.id.frameLayoutButton);
@@ -31,6 +33,14 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerViewButton);
         navigation = findViewById(R.id.navigationButton);
         bookApplication = findViewById(R.id.bookApplicationButton);
+
+        userDetails.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UserDetailsNavHost.class);
+                startActivity(intent);
+            }
+        });
 
         bookApplication.setOnClickListener(new View.OnClickListener() {
             @Override
