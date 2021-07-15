@@ -10,8 +10,6 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
-
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -20,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import static com.example.firstapplication.DetailBookActivity.BOOK_ID_KEY;
 
 public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerViewAdapter.ViewHolder> {
 
@@ -53,6 +52,7 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
             public void onClick(View v) {
 //                Toast.makeText(context, books.get(position).getName() + " Selected", Toast.LENGTH_LONG).show();
                 Intent intent = new Intent(context, DetailBookActivity.class);
+                intent.putExtra(BOOK_ID_KEY, books.get(position).getId());
                 context.startActivity(intent);
             }
         });

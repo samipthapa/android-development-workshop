@@ -23,7 +23,7 @@
         android:text="@string/linear_layout"
         android:layout_below="@id/powerWorkshop"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="50dp" />
 
 
     <Button
@@ -34,7 +34,7 @@
         android:layout_toRightOf="@id/linearLayoutButton"
         android:layout_below="@id/powerWorkshop"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="70dp" />
+        android:layout_marginTop="50dp" />
 
     <Button
         android:id="@+id/relativeLayoutButton"
@@ -77,10 +77,10 @@
         android:id="@+id/cardViewButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cardview_and_spinner"
+        android:text="CardView and \n Spinner"
         android:layout_below="@id/relativeLayoutButton"
         android:layout_toRightOf="@id/listViewButton"
-        android:layout_marginLeft="30dp"
+        android:layout_marginLeft="70dp"
         android:layout_marginTop="30dp"/>
 
     <Button

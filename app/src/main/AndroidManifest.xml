@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/image"
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstApplication">
-        <activity android:name=".UserDetailsNavHost"></activity>
+        <activity android:name=".CurrentlyReadingBookActivity"></activity>
+        <activity android:name=".AlreadyReadBookActivity" />
+        <activity android:name=".UserDetailsNavHost" />
         <activity android:name=".DetailBookActivity" />
         <activity android:name=".BookActivity" />
         <activity android:name=".NavigationHost" />

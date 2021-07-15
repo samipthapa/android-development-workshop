@@ -114,5 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(listIntent);
             }
         });
+
+        Utils.getInstance(this);
     }
 }

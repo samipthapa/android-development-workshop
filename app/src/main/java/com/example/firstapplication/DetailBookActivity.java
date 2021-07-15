@@ -2,16 +2,20 @@ package com.example.firstapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
 public class DetailBookActivity extends AppCompatActivity {
+    public static final String BOOK_ID_KEY = "bookId";
 
     private TextView bookName, authorName, pageCount, shortDesc, longDesc;
     private ImageView bookImage;
@@ -23,14 +27,78 @@ public class DetailBookActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail_book);
         initView();
 
-        Book book = new Book(1, "The Great Gatsby", "F. Scott Fitzgerald", "180",
-                "https://cdn.waterstones.com/bookjackets/large/9780/1411/9780141182636.jpg",
-                " A Novel by F. Scott Fitzgerald",
-                "The Great Gatsby, F. Scott Fitzgerald’s third book, stands as the supreme achievement of his career." +
-                        " First published in 1925, this quintessential novel of the Jazz Age has been acclaimed by generations of readers." +
-                        " The story of the mysteriously wealthy Jay Gatsby and his love for the beautiful Daisy Buchanan," +
-                        " of lavish parties on Long Island at a time when The New York Times noted “gin was the national drink and sex the national obsession,” it is an exquisitely crafted tale of America in the 1920s.");
-        setData(book);
+        Intent intent = getIntent();
+        if (null != intent) {
+            int bookId = intent.getIntExtra(BOOK_ID_KEY, -1);
+            if (bookId != -1) {
+                Book incomingBook = Utils.getInstance(this).getBookById(bookId);
+                if (null != incomingBook) {
+                    setData(incomingBook);
+                    handleAlreadyRead(incomingBook);
+                    handleCurrentlyReading(incomingBook);
+                }
+            }
+        }
+    }
+
+    private void handleAlreadyRead(Book book) {
+        ArrayList<Book> alreadyReadBooks = Utils.getInstance(this).getAlreadyReadBooks();
+
+        boolean alreadyReadExists = false;
+        for (Book b: alreadyReadBooks) {
+            if (b.getId() == book.getId()) {
+                alreadyReadExists = true;
+                break;
+            }
+        }
+        if (alreadyReadExists) {
+            finishedReading.setEnabled(false);
+        }
+        else {
+            finishedReading.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (Utils.getInstance(DetailBookActivity.this).addToAlreadyRead(book)) {
+                        Toast.makeText(DetailBookActivity.this, "Book Added", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(DetailBookActivity.this, AlreadyReadBookActivity.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(DetailBookActivity.this, "Error! Try Again", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
+    }
+
+    private void handleCurrentlyReading(Book book) {
+        ArrayList<Book> currentlyReadingBooks = Utils.getInstance(this).getCurrentlyReadingBooks();
+
+        boolean currentlyReadingExits = false;
+        for (Book b: currentlyReadingBooks) {
+            if (b.getId() == book.getId()) {
+                currentlyReadingExits = true;
+                break;
+            }
+        }
+        if (currentlyReadingExits) {
+            currentlyReading.setEnabled(false);
+        }
+        else {
+            currentlyReading.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (Utils.getInstance(DetailBookActivity.this).addToCurrentlyReading(book)) {
+                        Toast.makeText(DetailBookActivity.this, "Book Added", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(DetailBookActivity.this, CurrentlyReadingBookActivity.class);
+                        startActivity(intent);
+                    }
+                    else {
+                        Toast.makeText(DetailBookActivity.this, "Error! Try Again", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
     }
 
     private void setData(Book book) {
@@ -48,8 +116,8 @@ public class DetailBookActivity extends AppCompatActivity {
         bookName = findViewById(R.id.bookName);
         authorName = findViewById(R.id.authorName);
         pageCount = findViewById(R.id.pageCount);
-        shortDesc = findViewById(R.id.shortDescription);
-        longDesc = findViewById(R.id.longDescription);
+        shortDesc = findViewById(R.id.textView6);
+        longDesc = findViewById(R.id.textView8);
 
         bookImage = findViewById(R.id.imageView);
 
