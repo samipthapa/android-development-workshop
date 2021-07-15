@@ -1,6 +1,8 @@
 package com.example.firstapplication;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.transition.TransitionManager;
 import android.util.Log;
@@ -10,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -25,10 +28,12 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
     private static final String TAG = "BookRecyclerViewAdapter";
 
     private ArrayList<Book> books = new ArrayList<>();
+    private String parentActivity;
     private Context context;
 
-    public BookRecyclerViewAdapter(Context context) {
+    public BookRecyclerViewAdapter(Context context, String parentActivity) {
         this.context = context;
+        this.parentActivity = parentActivity;
     }
 
     @NonNull
@@ -64,6 +69,75 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
             TransitionManager.beginDelayedTransition(holder.parent);
             holder.expandedRelLayout.setVisibility(View.VISIBLE);
             holder.downArrow.setVisibility(View.GONE);
+            if (parentActivity.equals("allBooks")) {
+                holder.delete.setVisibility(View.GONE);
+            }
+            else if (parentActivity.equals("alreadyReadBooks")) {
+                holder.delete.setVisibility(View.VISIBLE);
+                holder.delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                        builder.setMessage("Are you sure you want to delete " + books.get(position).getName() + "?");
+                        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (Utils.getInstance(context).removeFromAlreadyReadBooks(books.get(position))) {
+                                    Toast.makeText(context, books.get(position).getName() + " Removed.", Toast.LENGTH_SHORT).show();
+                                    notifyDataSetChanged();
+
+                                    //reloads the already read activity
+                                    Intent intent = new Intent(context, AlreadyReadBookActivity.class);
+                                    context.startActivity(intent);
+                                }
+                                else {
+                                    Toast.makeText(context, "Error! Try Again", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+                        builder.create().show();
+                    }
+                });
+            }
+            else if (parentActivity.equals("currentlyReadingBooks")) {
+                holder.delete.setVisibility(View.VISIBLE);
+                holder.delete.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                        builder.setMessage("Are you sure you want to delete " + books.get(position).getName() + "?");
+                        builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                if (Utils.getInstance(context).removeFromCurrentlyReading(books.get(position))) {
+                                    Toast.makeText(context, books.get(position).getName() + " Removed.", Toast.LENGTH_SHORT).show();
+                                    notifyDataSetChanged();
+
+                                    //reloads the currently reading books activity
+                                    Intent intent = new Intent(context, CurrentlyReadingBookActivity.class);
+                                    context.startActivity(intent);
+                                }
+                                else {
+                                    Toast.makeText(context, "Error! Try Again", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        });
+                        builder.create().show();
+                    }
+                });
+            }
         } else {
             TransitionManager.beginDelayedTransition(holder.parent);
             holder.expandedRelLayout.setVisibility(View.GONE);
@@ -89,6 +163,7 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
         private ImageView downArrow, upArrow;
         private TextView textAuthor, textShortDescription;
         private RelativeLayout expandedRelLayout;
+        private TextView delete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -101,6 +176,7 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
             expandedRelLayout = itemView.findViewById(R.id.expandedRelativeLayout);
             textAuthor = itemView.findViewById(R.id.authorTextValue);
             textShortDescription = itemView.findViewById(R.id.textShortDescriptionValue);
+            delete = itemView.findViewById(R.id.deleteText);
 
             downArrow.setOnClickListener(new View.OnClickListener() {
                 @Override

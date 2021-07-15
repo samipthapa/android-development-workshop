@@ -77,14 +77,24 @@
                 android:text="Short Description Value"
                 android:layout_below="@id/textShortDescription"/>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/deleteText"
+                android:visibility="gone"
+                android:textColor="#FF0000"
+                android:text="Delete"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@id/CollapseCardButton"
+                android:layout_below="@id/textShortDescriptionValue" />
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/ic_up_arrow"
-                android:layout_below="@id/textShortDescription"
+                android:layout_below="@id/textShortDescriptionValue"
                 android:layout_alignParentEnd="true"
-                android:id="@+id/CollapseCardButton"
-                />
+                android:id="@+id/CollapseCardButton" />
 
 
         </RelativeLayout>

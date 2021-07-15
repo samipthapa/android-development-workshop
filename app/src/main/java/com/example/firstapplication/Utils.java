@@ -115,6 +115,44 @@ public class Utils {
         return false;
     }
 
+    public boolean removeFromAlreadyReadBooks (Book book) {
+        ArrayList<Book> books = getAlreadyReadBooks();
+        if (null != books) {
+            for (Book b: books) {
+                if (b.getId() == book.getId()) {
+                    if (books.remove(b)) {
+                        Gson gson = new Gson();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.remove(ALREADY_READ_BOOKS);
+                        editor.putString(ALREADY_READ_BOOKS, gson.toJson(books));
+                        editor.commit();
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean removeFromCurrentlyReading (Book book) {
+        ArrayList<Book> books = getCurrentlyReadingBooks();
+        if (null != books) {
+            for (Book b: books) {
+                if (b.getId() == book.getId()) {
+                    if (books.remove(b)) {
+                        Gson gson = new Gson();
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.remove(CURRENTLY_READING_BOOKS);
+                        editor.putString(CURRENTLY_READING_BOOKS, gson.toJson(books));
+                        editor.commit();
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
+    }
+
     public boolean addToAlreadyRead(Book book) {
         ArrayList<Book> books = getAlreadyReadBooks();
         if (null != books) {
